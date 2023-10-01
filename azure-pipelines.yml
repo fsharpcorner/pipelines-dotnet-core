@@ -16,7 +16,7 @@ jobs:
 - job: job1
   steps:
     - checkout: self
-    - script: echo "Hello, $(name)
+    - script: echo "Hello, $(name)"
 
 - job: job2
   steps:
