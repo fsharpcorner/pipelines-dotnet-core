@@ -5,12 +5,6 @@ trigger:
 
 - main
 
-# equivalents trigger
-# trigger:
-#  branches:
-#    include:
-#    - main
-
 variables:
   name: John
 
@@ -19,7 +13,17 @@ pool:
 
 jobs:
 
-- job: helloworld
+- job: job1
   steps:
     - checkout: self
-    - script: echo "Hello, $(name)"
+    - script: echo "Hello, $(name)
+
+- job: job2
+  steps:
+    - script: echo "job2"
+  dependsOn: job3
+
+- job: job3
+  steps:
+    - script: echo "job3"
+  dependsOn: job1
